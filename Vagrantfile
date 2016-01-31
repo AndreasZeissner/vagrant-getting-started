@@ -16,9 +16,11 @@ Vagrant.configure(2) do |config|
 
   config.vm.define "production" do | production |
 	production.vm.hostname = "production"
+	production.vm.network "public_network"
   end 
   config.vm.define "database" do | database |
 	database.vm.hostname = "database"
+	database.vm.network "private_network", ip: "192.168.100.123"
   end 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
