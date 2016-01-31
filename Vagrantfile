@@ -17,6 +17,7 @@ Vagrant.configure(2) do |config|
   config.vm.define "production" do | production |
 	production.vm.hostname = "production"
 	production.vm.network "private_network", ip: "192.168.100.122"
+	production.vm.synced_folder "website", "/var/www/website", create: true 
   end 
   config.vm.define "database" do | database |
 	database.vm.hostname = "database"
